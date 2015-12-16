@@ -1,0 +1,18 @@
+[main]
+<% if defined?(@includeprofile) -%>
+include=<%= @includeprofile %>
+<% end -%>
+
+<% if defined?(@vm) -%>
+[vm]
+<% @vm.each_pair do | key, value | -%>
+<%= key %>=<%= value %>
+<% end -%>
+<% end -%>
+
+<% if defined?(@sysctl) -%>
+[sysctl]
+<% @sysctl.each_pair do | key, value | -%>
+<%= key %>=<%= value %>
+<% end -%>
+<% end -%>
