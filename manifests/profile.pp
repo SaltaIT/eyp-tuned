@@ -12,8 +12,15 @@ define tuned::profile (
 
   if($profile_name!='virtual-guest')
   {
-    validate_hash($vm)
-    validate_hash($sysctl)
+    if($vm!=undef)
+    {
+          validate_hash($vm)
+    }
+
+    if($sysctl!=undef)
+    {
+      validate_hash($sysctl)
+    }
 
     file { "/etc/tuned/${profile_name}":
       ensure => 'directory',
