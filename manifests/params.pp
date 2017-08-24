@@ -11,11 +11,11 @@ class tuned::params {
       {
         /^6.*$/:
         {
-            $service_name_ktuned = 'ktuned'
+            $service_name_ktune = 'ktune'
         }
         /^7.*$/:
         {
-            $service_name_ktuned = undef
+            $service_name_ktune = undef
         }
 
         default: { fail('Unsupported RHEL/CentOS version!')  }
