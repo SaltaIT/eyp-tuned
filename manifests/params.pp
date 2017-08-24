@@ -2,7 +2,6 @@ class tuned::params {
 
   $package_name = [ 'tuned', 'tuned-utils' ]
   $service_name_tuned = 'tuned'
-  $service_name_ktuned = 'ktuned'
 
   case $::osfamily
   {
@@ -10,9 +9,15 @@ class tuned::params {
     {
       case $::operatingsystemrelease
       {
-        /^[67].*$/:
+        /^6.*$/:
         {
+            $service_name_ktuned = 'ktuned'
         }
+        /^7.*$/:
+        {
+            $service_name_ktuned = undef
+        }
+
         default: { fail('Unsupported RHEL/CentOS version!')  }
       }
     }

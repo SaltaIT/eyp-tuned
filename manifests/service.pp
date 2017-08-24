@@ -20,9 +20,12 @@ class tuned::service inherits tuned {
         enable => $tuned::service_enable,
       }
 
-      service { $tuned::params::service_name_ktuned:
-        ensure => $tuned::service_ensure,
-        enable => $tuned::service_enable,
+      if($tuned::params::service_name_ktuned!=undef)
+      {
+        service { $tuned::params::service_name_ktuned:
+          ensure => $tuned::service_ensure,
+          enable => $tuned::service_enable,
+        }  
       }
     }
   }
