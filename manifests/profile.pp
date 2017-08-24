@@ -38,6 +38,7 @@ define tuned::profile (
       group   => 'root',
       mode    => '0644',
       require => File["${tuned::params::tuned_profiles_basepath}/${profile_name}"],
+      notify  => Class['::tuned::service'],
     }
 
     #content => template("${module_name}/profile.erb"),
