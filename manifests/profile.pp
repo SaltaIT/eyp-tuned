@@ -23,24 +23,24 @@ define tuned::profile (
       validate_hash($sysctl)
     }
 
-    file { "${tuned_profiles_basepath}/${profile_name}":
+    file { "${tuned::params::tuned_profiles_basepath}/${profile_name}":
       ensure => 'directory',
       owner  => 'root',
       group  => 'root',
       mode   => '0755',
     }
 
-    concat { "${tuned_profiles_basepath}/${profile_name}/tuned.conf":
+    concat { "${tuned::params::tuned_profiles_basepath}/${profile_name}/tuned.conf":
       ensure  => 'present',
       owner   => 'root',
       group   => 'root',
       mode    => '0644',
-      require => File["${tuned_profiles_basepath}/${profile_name}"],
+      require => File["${tuned::params::tuned_profiles_basepath}/${profile_name}"],
     }
 
     #content => template("${module_name}/profile.erb"),
     concat::fragment{ "tuned.conf ${profile_name} header":
-      target  => "${tuned_profiles_basepath}/${profile_name}/tuned.conf",
+      target  => "${tuned::params::tuned_profiles_basepath}/${profile_name}/tuned.conf",
       order   => '00',
       content => template("${module_name}/profile.erb"),
     }
@@ -50,14 +50,14 @@ define tuned::profile (
       if(!defined(Concat::Fragment["tuned.conf ${profile_name} vm header"]))
       {
         concat::fragment{ "tuned.conf ${profile_name} vm header":
-          target  => "${tuned_profiles_basepath}/${profile_name}/tuned.conf",
+          target  => "${tuned::params::tuned_profiles_basepath}/${profile_name}/tuned.conf",
           order   => '10',
           content => "\n\n[vm]\n",
         }
       }
 
       concat::fragment{ "tuned.conf ${profile_name} vm data main profile":
-        target  => "${tuned_profiles_basepath}/${profile_name}/tuned.conf",
+        target  => "${tuned::params::tuned_profiles_basepath}/${profile_name}/tuned.conf",
         order   => '11',
         content => template("${module_name}/vm.erb"),
       }
@@ -68,14 +68,14 @@ define tuned::profile (
       if(!defined(Concat::Fragment["tuned.conf ${profile_name} sysctl header"]))
       {
         concat::fragment{ "tuned.conf ${profile_name} sysctl header":
-          target  => "${tuned_profiles_basepath}/${profile_name}/tuned.conf",
+          target  => "${tuned::params::tuned_profiles_basepath}/${profile_name}/tuned.conf",
           order   => '20',
           content => "\n\n[sysctl]\n",
         }
       }
 
       concat::fragment{ "tuned.conf ${profile_name} sysctl data main profile":
-        target  => "${tuned_profiles_basepath}/${profile_name}/tuned.conf",
+        target  => "${tuned::params::tuned_profiles_basepath}/${profile_name}/tuned.conf",
         order   => '21',
         content => template("${module_name}/sysctl.erb"),
       }
