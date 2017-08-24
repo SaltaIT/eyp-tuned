@@ -1,7 +1,8 @@
 class tuned::params {
 
   $package_name = [ 'tuned', 'tuned-utils' ]
-  
+  $service_name_tuned = 'tuned'
+  $service_name_ktuned = 'ktuned'
 
   case $::osfamily
   {
