@@ -1,5 +1,8 @@
 class tuned::params {
 
+  $package_name = [ 'tuned', 'tuned-utils' ]
+  
+
   case $::osfamily
   {
     'redhat' :
