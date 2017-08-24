@@ -1,4 +1,8 @@
-define tuned::profile::sysctlrule($profile_name=$name, $key, $value) {
+define tuned::profile::sysctlrule (
+                                    $key,
+                                    $value,
+                                    $profile_name = $name,
+                                  ) {
 
   include ::tuned
 

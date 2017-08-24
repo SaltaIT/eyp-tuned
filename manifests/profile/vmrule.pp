@@ -1,4 +1,8 @@
-define tuned::profile::vmrule($profile_name=$name, $key, $value) {
+define tuned::profile::vmrule (
+                                $key,
+                                $value,
+                                $profile_name = $name, 
+                              ) {
 
   include ::tuned
 
