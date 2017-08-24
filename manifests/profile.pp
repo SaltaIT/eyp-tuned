@@ -1,9 +1,11 @@
+# @param description profile description (called summary in tuned.conf)
 define tuned::profile (
                         $profile_name   = $name,
                         $includeprofile = undef,
                         $vm             = undef,
                         $sysctl         = undef,
                         $enable         = false,
+                        $description    = undef,
                       ) {
   include ::tuned
 

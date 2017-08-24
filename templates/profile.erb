@@ -1,4 +1,7 @@
 [main]
+<% if defined?(@description) -%>
+summary=<%= @description %>
+<% end -%>
 <% if defined?(@includeprofile) -%>
 include=<%= @includeprofile %>
 <% end -%>
