@@ -12,7 +12,7 @@ class tuned::params {
         /^6.*$/:
         {
             $service_name_ktune = 'ktune'
-            $tuned_profiles_basepath = '/etc/tune-profiles/'
+            $tuned_profiles_basepath = '/etc/tune-profiles'
         }
         /^7.*$/:
         {
