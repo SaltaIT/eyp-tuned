@@ -9,7 +9,7 @@ define tuned::profile::disk (
   {
     if($tuned::params::service_name_ktune==undef)
     {
-      # centos 7
+      # centos 7 - disk plugin
       concat::fragment{ "tuned.conf ${profile_name} disk elevator=${elevator};":
         target  => "${tuned::params::tuned_profiles_basepath}/${profile_name}/tuned.conf",
         order   => '23disk0',
