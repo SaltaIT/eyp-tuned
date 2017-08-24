@@ -93,7 +93,7 @@ define tuned::profile (
     #incloure variables, si es declaren dos enable han de fer colisio
     exec { 'enable profile tuned':
       command => "tuned-adm profile ${profile_name}",
-      unless => "tuned-adm active | grep -E '${profile_name}$'",
+      unless  => "tuned-adm active | grep -E '${profile_name}$'",
     }
   }
 

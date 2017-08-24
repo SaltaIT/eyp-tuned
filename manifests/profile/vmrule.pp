@@ -1,7 +1,7 @@
 define tuned::profile::vmrule (
                                 $key,
                                 $value,
-                                $profile_name = $name, 
+                                $profile_name = $name,
                               ) {
 
   include ::tuned
