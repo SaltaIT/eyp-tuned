@@ -1,3 +1,4 @@
+# puppet2sitepp @tunedprofiledisks
 define tuned::profile::disk (
                               $profile_name = $name,
                               $elevator     = undef,

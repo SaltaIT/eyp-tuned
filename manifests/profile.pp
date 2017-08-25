@@ -1,4 +1,5 @@
 # @param description profile description (called summary in tuned.conf)
+# puppet2sitepp @tunedprofiles
 define tuned::profile (
                         $profile_name   = $name,
                         $includeprofile = undef,
