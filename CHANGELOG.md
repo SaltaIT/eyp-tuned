@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.1
+
+* bugfix: **tuned::profile::disk** to notify profile enable exec
+
 ## 0.2.0
 
 * **INCOMPATIBLE CHANGE**: improved package management by creating **tuned::install**
