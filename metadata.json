@@ -2,14 +2,14 @@
   "name": "eyp-tuned",
   "version": "0.2.1",
   "author": "eyp",
-  "summary": "tuned - custom profiles",
+  "summary": "tuned - manages custom profiles",
   "license": "Apache-2.0",
   "source": "https://github.com/NTTCom-MS/eyp-tuned",
   "project_page": "https://github.com/NTTCom-MS/eyp-tuned",
   "issues_url": "https://github.com/NTTCom-MS/eyp-tuned/issues",
   "dependencies": [
-    {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0"},
-    {"name":"puppetlabs/concat","version_requirement":">= 1.2.3"}
+    {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0 < 9.9.9"},
+    {"name":"puppetlabs/concat","version_requirement":">= 1.2.3 < 9.9.9"}
   ],
   "operatingsystem_support": [
     {
@@ -34,9 +34,5 @@
     },
   ],
   "requirements": [
-    {
-      "name": "puppet",
-      "version_requirement": ">= 3.8.0"
-    }
-  ]
+q
 }
