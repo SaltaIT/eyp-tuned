@@ -1,6 +1,6 @@
 {
   "name": "eyp-tuned",
-  "version": "0.2.1",
+  "version": "2.0.1",
   "author": "Jordi Prats",
   "summary": "tuned - manages custom profiles",
   "license": "Apache-2.0",
