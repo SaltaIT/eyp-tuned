@@ -1,12 +1,12 @@
 {
   "name": "eyp-tuned",
-  "version": "0.2.1",
-  "author": "eyp",
+  "version": "2.0.1",
+  "author": "Jordi Prats",
   "summary": "tuned - manages custom profiles",
   "license": "Apache-2.0",
-  "source": "https://github.com/NTTCom-MS/eyp-tuned",
-  "project_page": "https://github.com/NTTCom-MS/eyp-tuned",
-  "issues_url": "https://github.com/NTTCom-MS/eyp-tuned/issues",
+  "source": "https://github.com/SaltaIT/eyp-tuned",
+  "project_page": "https://github.com/SaltaIT/eyp-tuned",
+  "issues_url": "https://github.com/SaltaIT/eyp-tuned/issues",
   "dependencies": [
     {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0 < 9.9.9"},
     {"name":"puppetlabs/concat","version_requirement":">= 1.2.3 < 9.9.9"}
@@ -36,7 +36,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 3.8.0"
+      "version_requirement": ">= 4.0.0"
     }
   ]
 }
